@@ -226,12 +226,14 @@
   };
   compareButtons.forEach(button => button.addEventListener('click', () => setComparison(button.dataset.compare)));
 
-  // Brief generator: transparent about the lack of a configured delivery endpoint.
+  // Brief generator: handoff to the user's own WhatsApp or email app.
   const form = $('#brief-form');
   const briefResult = $('#brief-result');
   const output = $('#brief-output');
   const copyBrief = $('#copy-brief');
   const editBrief = $('#edit-brief');
+  const sendWhatsApp = $('#send-whatsapp');
+  const sendEmail = $('#send-email');
   const getBrief = () => {
     const data = new FormData(form);
     return `NOVO BRIEFING — UXDRIVEN\n\nNome / empresa: ${data.get('name')}\nEmail: ${data.get('email')}\nProjeto: ${data.get('type')}\n\nDesafio:\n${data.get('message')}\n\n— Resumo gerado no site UXDriven`;
@@ -239,7 +241,10 @@
   form?.addEventListener('submit', event => {
     event.preventDefault();
     if (!form.reportValidity()) return;
-    output.textContent = getBrief();
+    const brief = getBrief();
+    output.textContent = brief;
+    if (sendWhatsApp) sendWhatsApp.href = `https://wa.me/5581996505291?text=${encodeURIComponent(brief)}`;
+    if (sendEmail) sendEmail.href = `mailto:vitor.lucianetti@gmail.com?subject=${encodeURIComponent('Solicitação de orçamento — UXDriven')}&body=${encodeURIComponent(brief)}`;
     form.hidden = true;
     briefResult.hidden = false;
     copyBrief?.focus();

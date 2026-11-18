@@ -20,7 +20,8 @@ Para testar localmente, abra `index.html` no navegador ou execute `npx serve .` 
 ## Observações para produção
 
 - Os três trabalhos em `Concept Studies` são **demonstrações**, não cases/clientes reais.
-- O formulário de briefing prepara texto e permite cópia, mas **não transmite dados** a servidor ou email. Conectar o canal oficial da UXDriven (form endpoint, email corporativo ou WhatsApp Business) antes do lançamento comercial.
+- Contatos oficiais exibidos: WhatsApp **+55 81 99650-5291** e email **vitor.lucianetti@gmail.com**, informados pelo responsável pela UXDriven.
+- O formulário prepara o briefing e abre o WhatsApp ou cliente de email com uma mensagem pré-preenchida. O usuário revisa e confirma o envio no aplicativo escolhido; **não há backend nem transmissão automática**. A cópia do briefing também está disponível.
 - As referências a provedores de IA indicam possibilidades técnicas de integração e não constituem parcerias oficiais.
 - Não há métricas ou depoimentos fictícios. A comparação CRO/UX é uma simulação ilustrativa.
 - Motion reduzido, navegação por teclado, estados de foco, menu mobile e abas acessíveis estão contemplados.
